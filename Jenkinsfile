@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Stage 2') {
             steps {
-                docker build . -t go:1
+                docker build -t go:1 . 
             }
         }
     }
