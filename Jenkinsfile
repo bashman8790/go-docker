@@ -3,7 +3,7 @@ node {
     stage('Initialize'){
 	 sh "echo start"
 	 sh "ls -al"
-	 sh "pwd"
+	 sh "echo webhok add"
     }
     stage('Checkout'){
           checkout scm
