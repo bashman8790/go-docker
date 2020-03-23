@@ -9,7 +9,7 @@ node {
           checkout scm
      }
     stage('Build'){
-        sh "docker build -t go:1 ."
+        sh "./build.sh"
     }
 	
 }
