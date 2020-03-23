@@ -9,7 +9,7 @@ node {
           checkout scm
      }
     stage('Build'){
-        sh "./build.sh"
+        sh "bash build.sh"
     }
 	
 }
