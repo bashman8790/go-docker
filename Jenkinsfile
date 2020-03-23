@@ -1,18 +1,13 @@
-pipeline {
-    agent any 
-    stages {
-        stage('Stage 1') {
-            steps {
-                echo 'Hello world!' 
-            }
-            steps {
-                ls -al
-            }
-        }
-        stage('Stage 2') {
-            steps {
-                docker build -t go:1 . 
-            }
-        }
+node {
+
+    stage('Initialize'){
+	 sh "echo start"
+	 sh "ls -al"
+	 sh "pwd"
     }
+
+    stage('Build'){
+        sh "docker build -t go:1 ."
+    }
+	
 }
