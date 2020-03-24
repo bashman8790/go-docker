@@ -6,7 +6,13 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ls -al'
-				sh 'pwd'
+                sh 'pwd'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker build . -t go:1'
+                sh 'docker images'
             }
         }
     }
