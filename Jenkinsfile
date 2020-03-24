@@ -1,15 +1,13 @@
-node {
-
-    stage('Initialize'){
-	 sh "echo start"
-	 sh "ls -al"
-	 sh "echo webhok add"
+pipeline {
+    agent {
+        docker { image 'alpine' }
     }
-    stage('Checkout'){
-          checkout scm
-     }
-    stage('Build'){
-        sh "bash build.sh"
+    stages {
+        stage('Test') {
+            steps {
+                sh 'ls -al'
+				sh 'pwd'
+            }
+        }
     }
-	
 }
